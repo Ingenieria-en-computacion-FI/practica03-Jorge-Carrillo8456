@@ -1,16 +1,18 @@
-#ifndef __FRACCION__H__
-#define __FRACCION__H__
+#ifndef __PELICULA__H__
+#define __PELICULA__H__
 
-struct Fraccion {
-    int num;
-    int den;
+struct Pelicula {
+    char *nombre;
+    char *genero;
+    char *directores[10];
+    int cantidadDirectores;
 };
-typedef struct Fraccion Fraccion;
+typedef struct Pelicula Pelicula;
 
-Fraccion* crearFraccion(int num, int den);
-void simplificar(Fraccion* f);
-Fraccion* sumar(const Fraccion* f1, const Fraccion* f2);
-void imprimir(const Fraccion* f);
-void destruir(Fraccion* f);
+Pelicula* crearPelicula(const char* nombre, const char* genero);
+void imprimir(const Pelicula* p);
+void cambiarGenero(Pelicula* p, const char* nuevoGenero);
+void agregarDirector(Pelicula* p, const char* director);
+void destruir(Pelicula* p);
 
 #endif
