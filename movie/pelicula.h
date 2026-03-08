@@ -1,24 +1,16 @@
-#ifndef __PELICULA_H__
-#define __PELICULA_H__
+#ifndef __FRACCION__H__
+#define __FRACCION__H__
 
-#define MAX_DIRECTORES 10
+struct Fraccion {
+    int num;
+    int den;
+};
+typedef struct Fraccion Fraccion;
 
-/* Tipo opaco */
-typedef struct Pelicula Pelicula;
-
-/* Crear una película */
-Pelicula* crearPelicula(const char* titulo, int anio, const char* genero);
-
-/* Imprimir información de la película */
-void imprimir(Pelicula* p);
-
-/* Cambiar el género */
-void cambiarGenero(Pelicula* p, const char* nuevoGenero);
-
-/* Agregar un director */
-void agregarDirector(Pelicula* p, const char* director);
-
-/* Liberar memoria */
-void destruir(Pelicula* p);
+Fraccion* crearFraccion(int num, int den);
+void simplificar(Fraccion* f);
+Fraccion* sumar(const Fraccion* f1, const Fraccion* f2);
+void imprimir(const Fraccion* f);
+void destruir(Fraccion* f);
 
 #endif
