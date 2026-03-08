@@ -1,42 +1,20 @@
-#include <stdio.h>
 #include "pelicula.h"
+#include <stdio.h>
+#include <stdlib.h>
 
-int main()
-{
+int main() {
+    Pelicula *p = crearPelicula("Inception", "Sci-Fi");
 
-    printf("Prueba del TAD Pelicula\n");
+    cambiarGenero(p, "Ciencia Ficcion");
 
-    /* TODO
-       Crear una película
-    */
-    Pelicula* p = NULL;
+    agregarDirector(p, "Christopher Nolan");
+    
+    imprimir(p);
 
+    destruir(p);
+    p = NULL;
 
-    /* TODO
-       Agregar algunos directores
-    */
-
-
-    /* TODO
-       Imprimir película
-    */
-
-
-    printf("\nCambiar genero\n");
-
-    /* TODO
-       Cambiar genero
-    */
-
-
-    /* TODO
-       Imprimir nuevamente
-    */
-
-
-    /* TODO
-       Liberar memoria
-    */
+    (p == NULL) ? printf("\nMemoria de pelicula y directores liberada.\n") : printf("\nFuga de memoria.\n");
 
     return 0;
 }
